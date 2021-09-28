@@ -9,6 +9,10 @@ api.get('/home3', (req, res) => {
     res.status(200).send({ok: false, message:'Welcome to BSG institute Dev Ops Course 3'})
 })
 
+api.all('*', (req, res) => {
+    res.status(404).send({ok:false, message: 'Resource could not be found'})
+})
+
 api.listen(PORT, () => {
     debug(`Application is running on port ${PORT}`)
 })
